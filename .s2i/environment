@@ -1,0 +1,2 @@
+ARTIFACT_DIR=com.example.enroute.demo.application/generated/distributions/executable/
+BUILDER_ARGS=clean export.debug
