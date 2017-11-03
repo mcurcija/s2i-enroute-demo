@@ -1,5 +1,7 @@
 package com.example.enroute.demo.application;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.UUID;
 
 import org.osgi.service.component.annotations.Component;
@@ -21,7 +23,7 @@ public class DemoApplication implements REST {
 		return string.toUpperCase();
 	}
 
-	public String getRandom() {
-		return UUID.randomUUID().toString();
+	public String getRandom() throws UnknownHostException {
+		return UUID.randomUUID().toString() + ":" + InetAddress.getLocalHost().getHostName();
 	}
 }
