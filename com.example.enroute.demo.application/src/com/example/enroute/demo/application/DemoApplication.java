@@ -7,6 +7,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.UUID;
 
 import org.osgi.service.component.annotations.Component;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import osgi.enroute.configurer.api.RequireConfigurerExtender;
 import osgi.enroute.google.angular.capabilities.RequireAngularWebResource;
@@ -21,6 +23,8 @@ import osgi.enroute.webserver.capabilities.RequireWebServerExtender;
 @Component(name = "com.example.enroute.demo")
 public class DemoApplication implements REST {
 
+	static Logger logger = LoggerFactory.getLogger(DemoApplication.class); 
+	
 	public String getUpper(String string) {
 		return string.toUpperCase();
 	}
@@ -30,6 +34,7 @@ public class DemoApplication implements REST {
 		result.created = DateTimeFormatter.ISO_DATE_TIME.format(LocalDateTime.now());
 		result.uuid = UUID.randomUUID().toString();
 		result.hostname = InetAddress.getLocalHost().getHostName();
+		logger.info("Generated result: {}", result);
 		return result;
 	}
 }
