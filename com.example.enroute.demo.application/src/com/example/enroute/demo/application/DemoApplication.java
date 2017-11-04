@@ -2,6 +2,8 @@ package com.example.enroute.demo.application;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.UUID;
 
 import org.osgi.service.component.annotations.Component;
@@ -23,7 +25,11 @@ public class DemoApplication implements REST {
 		return string.toUpperCase();
 	}
 
-	public String getRandom() throws UnknownHostException {
-		return UUID.randomUUID().toString() + ":" + InetAddress.getLocalHost().getHostName();
+	public RandomDTO getRandom() throws UnknownHostException {
+		final RandomDTO result = new RandomDTO();
+		result.created = DateTimeFormatter.ISO_DATE_TIME.format(LocalDateTime.now());
+		result.uuid = UUID.randomUUID().toString();
+		result.hostname = InetAddress.getLocalHost().getHostName();
+		return result;
 	}
 }
