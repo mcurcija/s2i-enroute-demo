@@ -12,7 +12,6 @@ JPM-Command:					demo
 
 -runrequires: osgi.identity;filter:='(osgi.identity=com.example.enroute.demo.application)'
 
--resolve: auto
 -runbundles: \
 	com.example.enroute.demo.application;version=snapshot,\
 	org.apache.felix.configadmin;version='[1.8.8,1.8.9)',\
