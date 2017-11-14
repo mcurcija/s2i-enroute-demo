@@ -9,7 +9,7 @@ pipeline {
     stage('checkout') {
       steps {
         echo 'Hello'
-        git(url: 'https://github.com/mcurcija/s2i-enroute-demo.git', branch: 'master', changelog: true, poll: true)
+        git(url: 'https://github.com/mcurcija/s2i-enroute-demo.git', branch: 'master', changelog: true)
       }
     }
     stage('build') {
