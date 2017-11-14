@@ -9,10 +9,8 @@ pipeline {
     }
     stage('build') {
       steps {
-        dir(path: 's2i-enroute-demo') {
-          tool(name: 'gradle-3.5.x', type: 'build')
-        }
-        
+        dir(path: 's2i-enroute-demo')
+        sh '    ./gradlew :tasks'
       }
     }
     stage('ship') {
