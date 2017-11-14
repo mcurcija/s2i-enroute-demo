@@ -9,8 +9,10 @@ pipeline {
     }
     stage('build') {
       steps {
-        dir(path: 's2i-enroute-demo')
-        sh '    ./gradlew :tasks'
+        dir(path: 's2i-enroute-demo') {
+          sh '    gradle tasks'
+        }
+        
       }
     }
     stage('ship') {
