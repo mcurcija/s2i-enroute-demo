@@ -10,7 +10,7 @@ pipeline {
     stage('build') {
       steps {
         dir(path: 's2i-enroute-demo') {
-          tool(name: 'GRADLE', type: 'gradle')
+          tool(name: 'gradle-3.5.x', type: 'build')
         }
         
       }
