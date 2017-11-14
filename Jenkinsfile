@@ -1,10 +1,5 @@
 pipeline {
-  agent {
-    docker {
-      image 'openjdk:alpine'
-    }
-    
-  }
+  agent any
   stages {
     stage('checkout') {
       steps {
