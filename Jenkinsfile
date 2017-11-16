@@ -10,10 +10,9 @@ pipeline {
     stage('build') {
       steps {
         dir(path: 's2i-enroute-demo') {
-          sh '    gradle tasks'
+          tool(type: 'hudson.plugins.gradle.GradleInstallation', name: 'gradle')
         }
         
-        tool(name: 'gradle', type: 'hudson.plugins.gradle.GradleInstallation')
       }
     }
     stage('ship') {
