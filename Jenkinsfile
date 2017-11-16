@@ -10,11 +10,13 @@ pipeline {
     stage('build') {
       steps {
         dir(path: 's2i-enroute-demo') {
-        	echo 'building ...'
+       	  echo 'Hello'
+        }
       }
     }
     stage('ship') {
       steps {
+        echo 'building ...'
       }
     }
   }
