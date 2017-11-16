@@ -15,7 +15,6 @@ pipeline {
     }
     stage('ship') {
       steps {
-        echo 'shipping ...'
       }
     }
   }
