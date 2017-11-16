@@ -11,7 +11,7 @@ pipeline {
       steps {
         dir(path: 's2i-enroute-demo') {
           tool(type: 'hudson.plugins.gradle.GradleInstallation', name: 'gradle')
-          sh 'gradle tasks'
+          sh '${gradle}/bin/gradle tasks'
         }
         
       }
