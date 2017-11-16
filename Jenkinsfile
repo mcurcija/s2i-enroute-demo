@@ -11,7 +11,7 @@ pipeline {
       steps {
         dir(path: 's2i-enroute-demo') {
           tool(type: 'hudson.plugins.gradle.GradleInstallation', name: 'gradle')
-          jobDsl(scriptText: 'def test = \'test\'')
+          jobDsl(scriptText: 'def GRADLE_HOME = tool name: \'gradle\', type: \'hudson.plugins.gradle.GradleInstallation\'     sh "${GRADLE_HOME}/bin/gradle tasks"')
         }
         
         sh 'env'
