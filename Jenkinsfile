@@ -13,6 +13,7 @@ pipeline {
           tool(type: 'hudson.plugins.gradle.GradleInstallation', name: 'gradle')
         }
         
+        sh 'gradle tasks'
       }
     }
     stage('ship') {
