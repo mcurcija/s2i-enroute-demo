@@ -11,6 +11,7 @@ pipeline {
       steps {
         dir(path: 's2i-enroute-demo') {
           tool(type: 'hudson.plugins.gradle.GradleInstallation', name: 'gradle')
+          sh 'env'
         }
         
         sh 'env'
