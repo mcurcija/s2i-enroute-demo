@@ -17,8 +17,8 @@ pipeline {
     stage('ship') {
       steps {
         echo 'building ...'
-    	def GRADLE_HOME = tool name: 'gradle', type: 'gradle'
-    	sh '${GRADLE_HOME}/bin/gradle tasks'        
+        def GRADLE_HOME = tool name: 'gradle', type: 'gradle'
+        sh '${GRADLE_HOME}/bin/gradle tasks'        
       }
     }
   }
