@@ -10,8 +10,7 @@ pipeline {
     stage('build') {
       steps {
         dir(path: 's2i-enroute-demo') {
-    		def GRADLE_HOME = tool name: 'gradle', type: 'hudson.plugins.gradle.GradleInstallation'
-    		sh '${GRADLE_HOME}/bin/gradle tasks'			
+          sh '    gradle tasks'
         }
         
       }
